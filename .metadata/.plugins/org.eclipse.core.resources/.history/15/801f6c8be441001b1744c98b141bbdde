@@ -1,0 +1,53 @@
+package StepDefinition;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import cucumber.api.PendingException;
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+
+public class StepDef {
+	
+	WebDriver driver;
+	
+	@Given("^user is on Guru(\\d+) home page$")
+	public void user_is_on_Guru_home_page(int arg1) throws Throwable {
+        System.setProperty("webdriver.chrome.driver", "C:/Program Files/Eclipse/Google Chrome Drivers_87/chromedriver.exe");
+		
+		WebDriver driver = new ChromeDriver();
+		
+		driver.get("http://demo.guru99.com/V4/");
+	
+		driver.manage().window().maximize();
+	    throw new PendingException();
+	}
+
+	@Then("^user enters username$")
+	public void user_enters_username() throws Throwable {
+		System.out.println("This is tep-2");
+		throw new PendingException();
+	}
+
+	@Then("^user enters passowrd$")
+	public void user_enters_passowrd() throws Throwable {
+		
+		System.out.println("This is tep-2")
+	    throw new PendingException();
+	}
+
+	@Then("^user clicks on reset button$")
+	public void user_clicks_on_reset_button() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new PendingException();
+	}
+
+	@Then("^close the browser$")
+	public void close_the_browser() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new PendingException();
+	}
+
+	
+	
+}

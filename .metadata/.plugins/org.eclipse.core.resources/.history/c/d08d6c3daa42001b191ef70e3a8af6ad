@@ -1,0 +1,72 @@
+package com.guru99.qa.testcases;
+
+
+import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+import com.guru99.qa.pages.LoginPage;
+import com.guru99.qa.testbase.TestBase;
+
+
+
+public class LoginPageTest extends TestBase {
+	
+	LoginPage LoginPage;
+	
+	public LoginPageTest() {
+		super();
+	}
+	
+	@BeforeMethod
+	public void setUp()
+	
+	{
+		initialisation();
+		
+		LoginPage LoginPage = new LoginPage();
+	}
+	
+	@Test
+	public void validateLoginPage()
+	{
+		String Title = LoginPage.validateLoginPage();
+		
+		Assert.assertEquals(Title, "Guru99 Bank Home Page");
+		
+		String Expected = "Guru99 Bank Home Page";
+		
+		 if (Title.equals(Expected)) {
+			 
+             System.out.println("Title Matched--->Test Passed!");
+  } 
+		 
+		 else 
+		 
+		 {
+             System.out.println("Test Failed--Title Not Matched");
+  }
+
+		
+		
+		
+	}
+	
+	@Test
+	public void ValidateCurrentUrl()
+	
+	{
+		String CurrentURL= driver.getCurrentUrl();
+		
+		Assert.assertEquals(CurrentURL, "http://localhost:8080/imdb/homepage" );
+		System.out.println("URL matching --> Part executed");
+	}
+	
+	@AfterMethod
+	public void tearDown()
+	{
+		driver.quit();
+	}
+	
+}

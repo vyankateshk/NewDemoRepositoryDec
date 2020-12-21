@@ -1,0 +1,31 @@
+package TestRunnerClass;
+
+import org.junit.runner.RunWith;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.annotations.BeforeClass;
+
+import cucumber.api.CucumberOptions;
+import cucumber.api.junit.Cucumber;
+import cucumber.api.testng.TestNGCucumberRunner;
+
+@RunWith(Cucumber.class)
+@CucumberOptions(
+        features = "src/main/java/Features/Login.feature"
+        ,glue={"src/main/java/StepDefinition/StepDef.java"},
+        tags= {"@smokesuite"},
+        plugin = {"pretty,HTML:test-output"})
+        
+ 
+public class TestRunner {
+	
+    private TestNGCucumberRunner testNGCucumberRunner;
+  
+    public static RemoteWebDriver connection;
+    
+    @BeforeClass(alwaysRun = true)
+    public void setUpCucumber() {
+    	 testNGCucumberRunner = new TestNGCucumberRunner(this.getClass());
+    }
+}
+
+    

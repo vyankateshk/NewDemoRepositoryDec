@@ -1,0 +1,45 @@
+package SeleniumPractice1;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class SeleniumPracticeClass1 {
+
+	public static void main(String[] args) throws InterruptedException {
+		
+        System.setProperty("webdriver.chrome.driver", "C:/Program Files/Eclipse/Google Chrome Drivers_87/chromedriver.exe");
+		
+		WebDriver driver = new ChromeDriver();
+		
+		driver.get("http://demo.guru99.com/V4/");
+		
+		driver.manage().window().maximize();
+		
+		Thread.sleep(3000);
+				
+		String CurrentURL = driver.getCurrentUrl();
+		System.out.println("CurrentURL = "+ CurrentURL);
+		
+		String CurrentTitle=driver.getTitle();
+		System.out.println("CurrentTitle = "+CurrentTitle);
+		
+		Thread.sleep(3000);
+		
+		driver.findElement(By.name("uid")).sendKeys("mngr300657");
+		
+		Thread.sleep(3000);
+		
+		driver.findElement(By.name("password")).sendKeys("mAnames");
+		
+		Thread.sleep(3000);
+		
+		driver.findElement(By.linkText("New Customer")).click();
+		
+		Thread.sleep(3000);
+		
+
+
+	}
+
+}

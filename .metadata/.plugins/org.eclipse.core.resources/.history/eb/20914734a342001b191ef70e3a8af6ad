@@ -1,0 +1,16 @@
+package com.guru99.qa.testcases;
+
+import org.testng.annotations.BeforeMethod;
+
+import com.guru99.qa.testbase.TestBase;
+
+public class LoginPageTest extends TestBase {
+	
+	@BeforeMethod
+	public void setUp()
+	
+	{
+		
+	}
+
+}

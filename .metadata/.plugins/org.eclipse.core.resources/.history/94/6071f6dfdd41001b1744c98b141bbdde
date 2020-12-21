@@ -1,0 +1,51 @@
+package StepDefinition;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+
+public class StepDef {
+	
+	WebDriver driver;
+	
+	@Given("user is on Guru99 home page")
+	public void user_is_on_guru99_home_page() {
+        System.setProperty("webdriver.chrome.driver", "C:/Program Files/Eclipse/Google Chrome Drivers_87/chromedriver.exe");
+		
+		WebDriver driver = new ChromeDriver();
+		
+		driver.get("https://www.spicejet.com/");
+	
+		driver.manage().window().maximize();
+	
+		
+	}
+
+	@Then("user enters username")
+	public void user_enters_username() {
+	    // Write code here that turns the phrase above into concrete actions
+	   
+	}
+
+	@Then("user enters passowrd")
+	public void user_enters_passowrd() {
+	    // Write code here that turns the phrase above into concrete actions
+	  
+	}
+
+	@Then("user clicks on reset button")
+	public void user_clicks_on_reset_button() {
+	    // Write code here that turns the phrase above into concrete actions
+	  
+	}
+
+	@Then("close the browser")
+	public void close_the_browser() {
+	    // Write code here that turns the phrase above into concrete actions
+	   
+	}
+
+
+}

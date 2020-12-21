@@ -1,0 +1,8 @@
+Feature: Loginto to Guru99 school and reset the username and password
+Scenario: Verify reset functionality of Guru99
+
+Given user is on Guru99 home page
+Then user enters username
+Then user enters passowrd
+Then user clicks on reset button
+Then close the browser
